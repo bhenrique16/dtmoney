@@ -1,9 +1,8 @@
-# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
-
 # dependencies
 /node_modules
 /.pnp
 .pnp.js
+yarn.lock  # Adicione esta linha para ignorar yarn.lock
 
 # testing
 /coverage
@@ -21,3 +20,6 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+# Add the following line to ignore package.json
+package.json
