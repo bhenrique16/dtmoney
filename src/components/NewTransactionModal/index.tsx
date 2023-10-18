@@ -4,14 +4,16 @@ import incomeImg from '../../assets/Entradas.svg'
 import outcomeImg from '../../assets/Saídas.svg'
 import { Container, TransactionTypeContainer, RadioBox } from './styles';
 import { FormEvent, useState, useContext } from 'react';
-import { TransactionsContexts } from '../../TransactionsContexts';
+import { useTransactions } from '../../Hooks/useTransactions';
+
+
 
 interface NewTransactionModalProps {
     isOpen: boolean;
     onRequestClose: () => void;
 }
 export function NewTransactionModal({ isOpen, onRequestClose }: NewTransactionModalProps) {
-    const { createTransaction } = useContext(TransactionsContexts)
+    const { createTransaction } = useTransactions()
     const [title, setTitle] = useState('')
     const [amount, setAmount] = useState(0)
     const [category, setCategory] = useState('')
